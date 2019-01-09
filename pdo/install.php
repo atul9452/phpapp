@@ -6,11 +6,11 @@
  *
  */
 
-require "/var/www/html/pdo/config.php";
+require "/var/www/html/phpapp/pdo/config.php";
 
 try {
     $connection = new PDO("mysql:host=$host", $username, $password, $options);
-    $sql = file_get_contents("/var/www/html/pdo/data/init.sql");
+    $sql = file_get_contents("/var/www/html/phpapp/pdo/data/init.sql");
     $connection->exec($sql);
     
     echo "Database and table users created successfully.";
